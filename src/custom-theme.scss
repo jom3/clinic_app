@@ -1,0 +1,19 @@
+
+@use '@angular/material' as mat;
+@include mat.core();
+
+$clinic-app-primary: mat.define-palette(mat.$indigo-palette);
+$clinic-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$clinic-app-warn: mat.define-palette(mat.$red-palette);
+
+$clinic-app-theme: mat.define-light-theme((
+  color: (
+    primary: $clinic-app-primary,
+    accent: $clinic-app-accent,
+    warn: $clinic-app-warn,
+  )
+));
+
+@include mat.all-component-themes($clinic-app-theme);
+
