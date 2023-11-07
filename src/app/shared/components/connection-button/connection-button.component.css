@@ -1,0 +1,17 @@
+.connection__button{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgb(139, 1, 1);
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+.connection__button:hover{
+  background-color: red;
+  transition: 250ms;
+}
+.connection__label{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+}

@@ -1,0 +1,27 @@
+<div class="register__attention__container">
+  <form class="register__attention__form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <h3 class="register__title">register new attention</h3>
+    <mat-form-field class="register__formfield">
+      <mat-label>User</mat-label>
+      <mat-select formControlName="user_id">
+        <mat-option *ngFor="let user of users()" value={{user.user_id}}>{{user.firts_name | titlecase}} {{user.last_name | titlecase}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="register__formfield">
+      <mat-label>Room</mat-label>
+      <mat-select formControlName="room_id">
+        <mat-option *ngFor="let room of rooms()" value={{room.room_id}}>{{room.name | titlecase}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="register__formfield">
+      <mat-label>Staff</mat-label>
+      <mat-select formControlName="staff_id">
+        <mat-option *ngFor="let staff of staffs()" value={{staff.staff_id}}>{{staff.user.firts_name | titlecase}} {{staff.user.last_name | titlecase}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="buttons__container">
+      <button mat-raised-button class="submit__button">Register</button>
+      <button mat-raised-button class="cancel__button" (click)="onBack()">Cancel</button>
+    </div>
+  </form>
+</div>

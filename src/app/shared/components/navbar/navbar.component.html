@@ -1,0 +1,41 @@
+<mat-drawer-container class="side__container" autosize>
+  <mat-toolbar class="navbar">
+    <header class="nav__header">
+      <button mat-icon-button class="side__button" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img src="{{ logoUrl }}" class="logo__image" alt="" />
+    </header>
+    <ul class="nav__list">
+      <li *ngFor="let route of routes">
+        <a
+          class="nav__item"
+          [routerLink]="[route.route]"
+          routerLinkActive="router-link-active"
+          >{{ route.name }}</a
+        >
+      </li>
+      <li>
+        <button mat-button [matMenuTriggerFor]="menu" class="nav__item_menu">Administration</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item><a class="nav__item" [routerLink]="['/room']" routerLinkActive="router-link-active" >Room</a></button>
+          <button mat-menu-item><a class="nav__item" [routerLink]="['/department']" routerLinkActive="router-link-active" >Department</a></button>
+          <button mat-menu-item><a class="nav__item" [routerLink]="['/speciality']" routerLinkActive="router-link-active" >Speciality</a></button>
+          <button mat-menu-item><a class="nav__item" [routerLink]="['/illness']" routerLinkActive="router-link-active" >Illness</a></button>
+        </mat-menu>
+      </li>
+    </ul>
+  </mat-toolbar>
+  <mat-drawer #drawer class="sidenav__drawer" mode="side">
+    <ul class="nav__list_col">
+      <li *ngFor="let route of routes">
+        <a
+          class="nav__item__col"
+          [routerLink]="[route.route]"
+          routerLinkActive="router-link-active"
+          >{{ route.name }}</a
+        >
+      </li>
+    </ul>
+  </mat-drawer>
+</mat-drawer-container>

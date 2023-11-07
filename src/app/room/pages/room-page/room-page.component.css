@@ -1,0 +1,18 @@
+.room__table__container{
+  width: 100%;
+  min-width: 500px;
+  height: 100%;
+  padding: 20px;
+}
+.room__header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.room__table{
+  padding: 10px;
+}
+.more__button{
+  background-color: rgb(90, 90, 255);
+}

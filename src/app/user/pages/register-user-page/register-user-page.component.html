@@ -1,0 +1,46 @@
+<div class="register__user__container">
+  <form class="register__user__form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <h3 class="register__title">register new user</h3>
+    <mat-form-field appearance="fill" class="register__formfield">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firts_name">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="register__formfield">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="last_name">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="register__formfield">
+      <mat-label>Age</mat-label>
+      <input matInput formControlName="age" type="number" min="0" max="120">
+    </mat-form-field>
+    <mat-form-field class="register__formfield">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option value="Male">MALE</mat-option>
+        <mat-option value="Female">FEMALE</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="register__formfield">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthday">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="register__formfield">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="register__formfield">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="register__formfield">
+      <mat-label>Telephone</mat-label>
+      <input matInput formControlName="telephone">
+    </mat-form-field>
+    <div class="buttons__container">
+      <button mat-raised-button class="submit__button">Register</button>
+      <button mat-raised-button class="cancel__button" (click)="onBack()">Cancel</button>
+    </div>
+  </form>
+</div>
